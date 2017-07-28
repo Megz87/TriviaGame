@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css">
+<title>Trivia Game</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+</head>
+<body>
+  
+
+
+<div>
+    <h1>Let's Play Some Trivia</h1>
+</div>
+<div class="questions">
+    <p>1. What is the world's longest river?</p>
+    <form class="options">
+        <input class="option" type="radio" name="correct" value=4>Amazon<br>
+        <input class="option" type="radio" name="question1" value=3>Yangtze<br>
+        <input class="option" type="radio" name="question1" value=2>Congo<br>
+        <input class="option" type="radio" name="question1" value=1>Nile</br>
+    </form>
+</div>
+<div class="questions">
+    <p>2.What is the diameter of Earth? ?</p>
+    <form class="options">
+        <input class="option" type="radio" name="correct" value=4>8000 miles<br>
+        <input class="option" type="radio" name="question2" value=3>6500 miles<br>
+        <input class="option" type="radio" name="question2" value=2>7000 miles<br>
+        <input class="option" type="radio" name="question2" value=1>9200 miles<br>
+    </form>
+</div>
+<div class="questions">
+    <p>3. What is another word for Lexicon?</p>
+    <form class="options">
+        <input class="option" type="radio" name="question3" value=4>Dictionary<br>
+        <input class="option" type="radio" name="question3" value=3>a persons vocabulary<br>
+        <input class="option" type="radio" name="question3" value=2>linguistics<br>
+        <input class="option" type="radio" name="correct" value=1>all of the above<br>
+    </form>
+</div>
+<div class="questions">
+    <p>4.Who is purported to be the inventor of champagne? ?</p>
+    <form>
+        <input class="option" type="radio" name="correct" value=4>Dom Perignon<br>
+        <input class="option" type="radio" name="question4" value=3>Madame Pompadour<br>
+        <input class="option" type="radio" name="question4" value=2>Napoleon<br>
+        <input class="option" type="radio" name="question4" value=1>Martin Luther<br>
+    </form>
+</div>
+<div class="questions">
+    <p>5.Who invented the rabies vaccination??</p>
+    <form>
+        <input class="option" type="radio" name="question5" value=4>Marie Curie<br>
+        <input class="option" type="radio" name="question5" value=3>Niels Bohr<br>
+        <input class="option" type="radio" name="correct" value=2>Louis Pasteur<br>
+        <input class="option" type="radio" name="question5" value=1>Enrico Fermi<br>
+    </form>
+</div>
+<div class="questions">
+    <p>5.What is the painting 'La Gioconda' more usually known as?</p>
+    <form>
+        <input class="option" type="radio" name="question5" value=4>The Kiss by Gustav Klimt<br>
+        <input class="option" type="radio" name="correct" value=3>Mona Lisa by Leonardo da Vinci<br>
+        <input class="option" type="radio" name="question5" value=2>The Scream by Edvard Munch<br>
+        <input class="option" type="radio" name="question5" value=1>Blue Nude by Henri Matisse<br>
+    </form>
+</div>
+
+
+   <br>
+    <input type="button" id='next' value="Next" onlick="sum_values()">
+  
+
+<script type="text/javascript">
+var wins = 0;
+  var item1 = document.getElementById('questions');
+  var userGuess = 0;
+  var correctAnswer = $("input[name = 'correct']" );
+var totalQuestions = $('.questions').size();
+var currentQuestion = 0;
+$questions = $('.questions');
+$questions.hide();
+$($questions.get(currentQuestion)).fadeIn();
+$('#next').click(function(){
+    $($questions.get(currentQuestion)).fadeOut(function(){
+        currentQuestion = currentQuestion + 1;
+        if(currentQuestion == totalQuestions){
+               var result = sum_values()
+               //do stuff with the result
+               alert(result);
+        }else{
+        $($questions.get(currentQuestion)).fadeIn();
+        }
+    });
+
+});
+
+
+
+function checkAnswer(){
+  var checkAnswer = 0;
+  if (userGuess === correctAnswer)
+    wins++;
+console.log(checkAnswer);
+
+ } 
+
+
+</script>
+
+    </body>
+</html>
